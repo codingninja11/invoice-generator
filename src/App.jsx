@@ -18,6 +18,7 @@ function App() {
     setBucket([...bucket, data]); //spread operator for restoring
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const total = () => {
     let totalVal = 0;
     for (let i = 0; i < bucket.length; i++) {
@@ -28,7 +29,7 @@ function App() {
 
   useEffect(() => {
     total();
-  }, [bucket]);
+  }, [bucket, total]);
 
   return (
     <>
