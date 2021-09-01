@@ -7,7 +7,7 @@ function App() {
   const [sum, setSum] = useState(0);
   const [tax, setTax] = useState(0);
 
-  const addItem = (e) => {
+  const addItem = (e) => {    //event
     const data = {
       id: e.target.form[0].value,
       name: e.target.form[1].value,
@@ -15,7 +15,7 @@ function App() {
       rate: parseInt(e.target.form[3].value),
       amount: parseInt(e.target.form[4].value),
     };
-    setBucket([...bucket, data]); //spread operator for restoring
+    setBucket([...bucket, data]);   //spread operator for restoring
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -29,7 +29,7 @@ function App() {
 
   useEffect(() => {
     total();
-  }, [bucket, total]);
+  }, [bucket, total]);        //calls up total function whenever value changes in bucket,total
 
   return (
     <>
@@ -147,7 +147,9 @@ function App() {
                 <Table item={item} />
               </div>
             );
-          })}
+          })}              
+
+        { /* item is passed as a prop to table component*/ }
 
           {/* form  */}
           <form action="">
